@@ -10,7 +10,11 @@
 - [x] **Prior work foundation** (master's thesis, ICRA paper — friction cone optimization on monopod/biped)
 - [x] **DLR Germany collaboration initiated** (Fares established contact with space robotics specialist)
 - [x] **AI-assisted research workflow established** (NotebookLM, Claude, ChatGPT in use)
-- [x] **Local LaTeX research repository set up** (Git-tracked, Overleaf PSD document pending)
+- [x] **Local LaTeX research repository set up** (Git-tracked, synced with Overleaf via GitHub)
+- [x] **Overleaf PSD document created** (this Git repo IS the Overleaf document — main.tex root with \input{} sections)
+- [x] **Flow matching paper reviewed** (ForceFlow, arXiv:2605.11048v1 — now in local library)
+- [x] **New critical papers added to library:** O'Neill et al. (2025) Koopman contact dynamics, Krolicki et al. (2022) Koopman quadruped deformable terrain, Shi et al. (2023) Koopman soft robotics survey, Terrones MIT thesis (2024), digital twin review
+- [x] **Gap analysis refined** — Two-pass verification confirmed: (1) No Koopman work on friction cone computation, (2) Existing Grassmann contact work is static/grasping-oriented, not dynamic friction optimization
 - [x] **Administrative progress** (clearance and transcript complete; work permit in process)
 
 ### Technical Achievements (from master's work)
@@ -24,21 +28,15 @@
 
 ### Immediate Priorities (Next 2-4 Weeks)
 
-- [ ] **Create Overleaf PSD document** ("PSD Dean's PSD Plan") with structure:
-  - Tentative research plan
-  - Ideas and exploratory directions
-  - Progress tracking
-  - Meeting notes
 - [ ] **Complete state-of-the-art literature review** on:
   - Grassmannian/Riemannian manifolds applied to friction cones and sliding
-  - Koopman operators for locomotion dynamics
-  - Relevance and novelty confirmation
-- [ ] **Review flow matching paper** (shared by Hozefa)
+  - Koopman operators for friction dynamics in locomotion
+  - Relevance and novelty confirmation (partial progress made — Memory Bank has synthesis)
 - [ ] **Share ICRA paper and master's thesis** with Fares and Hozefa
-- [ ] **Investigate Koopman operators/EDMD** for friction dynamics linearization
+- [ ] **Investigate Koopman operators/EDMD** for friction dynamics — specifically the gap: "can a Koopman operator learn an accurate friction cone model?"
+- [ ] **Populate section files with substantive content** (research_directions.tex, research_questions.tex, ideas.tex, lit_notes.tex are currently sparse)
 
 ### Medium-Term (Next 2-3 Months)
-
 - [ ] **Mapping: Friction cones → Riemannian manifolds → Grassmannian representation**
   - Mathematical formulation of contact configuration subspace projections
   - Dimensionality reduction bounds derivation
@@ -49,7 +47,6 @@
 - [ ] **Prepare for DLR Germany specialist talk** (October/November 2026)
 
 ### Long-Term (6+ Months)
-
 - [ ] **PhD research proposal (PSD) submission**
 - [ ] **Real robot validation** (Spot robot or similar platform)
 - [ ] **Demo video creation** for research findings
@@ -68,17 +65,17 @@ The research is in **Phase 1: Foundation and Literature Review** of the PhD time
 - Literature review: 🔄 Active (state-of-the-art search in progress)
 - Simulation: ⬜ Not yet started for this direction (master's code available)
 - Real robot testing: ⬜ To begin after August 2026 arrival
-- PSD document: ⬜ To be created (Overleaf)
+- PSD document: ✅ Created (this Git repo is the Overleaf document)
 - Publication: ⬜ Not yet started
 
 | Area | Status | Next Action |
 |------|--------|-------------|
 | Grassmannian manifolds | 🔄 Literature search | Confirm novelty, document findings |
 | Riemannian manifolds | 🔄 Theory validation | Map friction cone geometry |
-| Koopman operators | ⬜ Literature review | Read flow matching paper |
-| Force flow dynamics | ⬜ Exploration | TBD |
+| Koopman operators | 🔄 Gap confirmed | Investigate for friction cone computation |
+| Force flow dynamics | ✅ ForceFlow reviewed | Flow matching for contact-rich manipulation |
 | Systems engineering | ⬜ Integration | Apply NASA handbook framework |
-| PSD document | ⬜ Creation | Set up Overleaf structure |
+| PSD document | ✅ Active | Section files need substantive content |
 
 ## Known Issues
 
@@ -87,15 +84,19 @@ The research is in **Phase 1: Foundation and Literature Review** of the PhD time
 2. **sections/meeting_notes.tex is empty** — appears to be a duplicate of sections/Meeting Minutes.tex. Unclear which is authoritative.
 3. **sections/lit_notes.tex is placeholder** — contains only example markdown, no actual literature notes.
 
+### Content Gaps
+4. **Section files are sparse** — research_directions.tex has only 6 bullet-point names, research_questions.tex has only 2 generic questions, ideas.tex and lit_notes.tex need substantive content.
+5. **Bibliography not usable** — references.bib doesn't contain actual BibTeX entries; needs complete rebuild.
+
 ### Technical Issues
-4. **Optimization solver not specified** — Hozefa asked about this in the 22 May meeting. Needs investigation and documentation.
-5. **Simulation computational cost is high** — 18,000 epochs × 6 hours for biped. Grassmannian reduction target not yet quantified.
-6. **Google Drive access issues** — Dean experienced firewall problems accessing shared files. Alternative sharing methods may be needed.
+6. **Optimization solver not specified** — Hozefa asked about this in the 22 May meeting. Needs investigation and documentation.
+7. **Simulation computational cost is high** — 18,000 epochs × 6 hours for biped. Grassmannian reduction target not yet quantified.
+8. **Google Drive access issues** — Dean experienced firewall problems accessing shared files. Alternative sharing methods may be needed.
 
 ### Research Risks
-7. **Novelty unconfirmed** — Grassmannian manifolds may already be applied to friction problems. State-of-the-art review is critical.
-8. **PhD timeline uncertainty** — Work permit pending, arrival expected August 2026, but delays possible.
-9. **Physical robot access** — Spot robot or alternative platform availability not yet confirmed.
+9. **Novelty refined** — two-pass gap verification confirmed defensible claim: "Existing Grassmann contact work is static/grasping-oriented; Dean's contribution is dynamic friction optimization for locomotion."
+10. **PhD timeline uncertainty** — Work permit pending, arrival expected August 2026, but delays possible.
+11. **Physical robot access** — Spot robot or alternative platform availability not yet confirmed.
 
 ## Evolution of Project Decisions
 
@@ -122,6 +123,7 @@ The research is in **Phase 1: Foundation and Literature Review** of the PhD time
 - Decision: Pursue edge-to-cloud computing + VR for industrial demonstration
 - Decision: Identify co-supervision needs before proposing specific candidates
 - Confirmed: Real robot testing required alongside simulation
+- **Refined gap:** Existing Grassmann contact work is static/grasping-oriented; Dean's contribution is dynamic friction optimization for locomotion
 
 ### Decision Patterns
 - **Exploratory approach:** Multiple research directions maintained in parallel (manifolds, Koopman, force flow) with periodic convergence checks
@@ -138,7 +140,7 @@ The research is in **Phase 1: Foundation and Literature Review** of the PhD time
 | Spot robot | ⬜ Unconfirmed | Real robot validation |
 | DLR collaboration | 🔄 Fares initiated | Space robotics specialization |
 | Co-supervisor | ⬜ To identify | Direction-specific guidance |
-| Overleaf access | 🔄 To set up | PSD document creation |
+| Overleaf access | ✅ Active (Git linked) | PSD document already functional |
 | ICRA paper sharing | ⬜ Pending | Supervisor review of foundation |
 
 ## Metrics & Targets
@@ -149,7 +151,7 @@ The research is in **Phase 1: Foundation and Literature Review** of the PhD time
 - **Target platforms:** Monopod ✅ → Biped ✅ → Hexapod/Octopod ⬜
 
 ### Quality Targets
-- Novelty: Beyond existing friction cone methods (confirmed via literature review)
+- Novelty: Two-pass gap verification complete — defensible claim that existing Grassmann contact work is static, not dynamic
 - Reproducibility: Documented simulation environment (Google Colab notebooks)
 - Validation: Both simulated and physical robot testing
 - Impact: Publication in robotics/control venues (ICRA, RSS, TRO)

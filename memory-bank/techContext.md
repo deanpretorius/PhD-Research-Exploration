@@ -6,7 +6,7 @@
 | Technology | Purpose | Status |
 |-----------|---------|--------|
 | LaTeX | Primary document preparation | Active (main.tex, sections/) |
-| Overleaf | Collaborative LaTeX editing | To be set up (PSD document) |
+| Overleaf | Collaborative LaTeX editing via Git sync | **Active** — this repository IS the Overleaf document, synced via Git |
 | BibTeX | Reference management | references.bib (needs fixing — currently contains LaTeX preamble, not BibTeX entries) |
 | Markdown (hybrid) | Inline markdown within LaTeX | Active (lit_notes.tex) |
 
@@ -42,7 +42,7 @@
 - **IDE:** Visual Studio Code
 
 ### Remote/Collaborative
-- **Overleaf:** For shared PSD document (to be created)
+- **Overleaf:** Shared PSD document — **this Git repository is synced with Overleaf** via the GitHub-Overleaf integration. `main.tex` is the root document, and `sections/` are included via `\input{}` commands. Changes pushed to GitHub sync to Overleaf automatically.
 - **Google Colab:** For simulation notebooks
 - **Google Drive:** File sharing (Dean faced firewall issues accessing)
 
@@ -72,10 +72,12 @@
 |-------|-----------|--------|
 | Dean's master's thesis | Foundation: friction cone optimization | Available, needs sharing |
 | Dean's ICRA paper | Published work on 3D friction computation | Available, needs sharing |
-| Flow matching paper (from Hozefa) | Koopman/data-driven dynamics | To review |
+| Flow matching paper (from Hozefa) — ForceFlow (2605.11048v1) | Contact-driven flow matching for manipulation | Reviewed (now in library) |
+| 1-s2.0-S2405896322028622-main.pdf | Koopman for quadruped leg dynamics on deformable terrain | In repository |
 | 2303.10471v2.pdf | In repository | Not yet categorized |
 | 2411.14321v3.pdf | In repository | Not yet categorized |
 | 2512.13009v1.pdf | In repository | Not yet categorized |
+| 2605.11048v1.pdf | ForceFlow: Learning to Feel and Act via Contact-Driven Flow Matching | In repository |
 | A_novel_method_for_computing_the_3D_friction_cone_using_complimentary_constraints.pdf | Friction cone computation | In repository |
 | A_quantitative_analysis_of_Koopman_operator_method.pdf | Koopman operator analysis | In repository |
 | Borras_CK2013.pdf | Related work | In repository |
@@ -85,8 +87,11 @@
 | poland-lec5.pdf | Lecture notes | In repository |
 | ponce.4finger.pdf | Grasping literature | In repository |
 | pretorius_deep_2020.pdf | Author's prior work | In repository |
+| s42492-023-00137-4.pdf | Digital twin technology review | In repository |
+| s43154-023-00099-8.pdf | Koopman operators for soft robotics (survey) | In repository |
 | sensors-19-03713.pdf | Related work | In repository |
 | Systems_Engineering-Reengineered_The_Fourth_Wave-1.pdf | Systems engineering | In repository |
+| terrones-jterrone-sm-meche-2024-thesis.pdf | Terrones MIT thesis: Koopman for legged locomotion | In repository |
 | thesis.pdf | Additional thesis | In repository |
 | Two_graphical_methods_for_planar_contact_problems.pdf | Contact mechanics | In repository |
 
@@ -122,7 +127,20 @@ Prepare updates in Overleaf → Present progress → Discuss technical issues
 - **Document class:** article (11pt, A4 paper)
 - **Packages:** geometry, hyperref, enumitem, graphicx, markdown (hybrid mode)
 - **Structure:** sections included via \input{} commands
+  - `sections/research_directions.tex` — Research direction names
+  - `sections/ideas.tex` — Ideas and exploratory thoughts
+  - ` sections/lit_notes.tex` — Literature notes (markdown hybrid)
+  - `sections/research_questions.tex` — Open questions
+  - `sections/meeting_notes.tex` — Meeting summaries
+  - `sections/Meeting Minutes.tex` — Detailed meeting minutes
 - **Bibliography:** plain style (references.bib needs fixing — currently contains LaTeX preamble instead of BibTeX entries)
+
+### GitHub-Overleaf Sync
+- This repository is directly linked to Overleaf via Git integration
+- Pushing to GitHub remote automatically syncs to Overleaf
+- The main.tex file is the root document in the Overleaf project
+- Section files are modular and can be edited independently
+- **Implication:** All changes made to this repo (either locally or via Cline) are reflected in the Overleaf document
 
 ### Git Repository
 - **Remote:** github.com/deanpretorius/PhD-Research-Exploration.git
